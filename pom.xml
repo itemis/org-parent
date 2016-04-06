@@ -34,4 +34,17 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+  
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-oss-snapshots</id>
+      <layout>default</layout>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-oss-staging</id>
+      <layout>default</layout>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+    </repository>
+  </distributionManagement>
 </project>
