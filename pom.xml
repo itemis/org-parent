@@ -45,6 +45,10 @@
     </repository>
   </distributionManagement>
   
+  <properties>
+    <project.scm.id>ossrh</project.scm.id>
+  </properties>
+  
   <build>
     <pluginManagement>
       <plugins>
