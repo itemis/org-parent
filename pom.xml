@@ -44,14 +44,20 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
   </distributionManagement>
-  
+
   <developers>
+    <developer>
+      <id>itemis</id>
+      <name>itemis AG</name>
+      <organization>itemis AG</organization>
+      <organizationUrl>https://itemis.com/</organizationUrl>
+    </developer>
   </developers>
-  
+
   <properties>
     <project.scm.id>github</project.scm.id>
   </properties>
-  
+
   <build>
     <pluginManagement>
       <plugins>
@@ -137,9 +143,9 @@
             <version>1.6.7</version>
             <extensions>true</extensions>
             <configuration>
-               <serverId>ossrh</serverId>
-               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-               <autoReleaseAfterClose>true</autoReleaseAfterClose>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
           </plugin>
         </plugins>
