@@ -18,7 +18,6 @@
 
   <scm>
     <connection>scm:git:https://github.com/itemis/org-parent.git</connection>
-    <developerConnection>scm:git:git@github.com:itemis/org-parent.git</developerConnection>
     <url>https://github.com/itemis/org-parent</url>
   </scm>
 
