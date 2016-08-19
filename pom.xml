@@ -57,15 +57,30 @@
 
   <properties>
     <project.scm.id>github</project.scm.id>
+    <version.maven-release-plugin>2.5.3</version.maven-release-plugin>
+    <version.unleash-maven-plugin>2.0.0</version.unleash-maven-plugin>
+    <version.unleash-scm-provider-git>2.0.0</version.unleash-scm-provider-git>
   </properties>
 
   <build>
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>com.itemis.maven.plugins</groupId>
+          <artifactId>unleash-maven-plugin</artifactId>
+          <version>${version.unleash-maven-plugin}</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.itemis.maven.plugins</groupId>
+              <artifactId>unleash-scm-provider-git</artifactId>
+              <version>${version.unleash-scm-provider-git}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
+          <version>${version.maven-release-plugin}</version>
           <configuration>
             <tagNameFormat>@{project.version}</tagNameFormat>
           </configuration>
@@ -91,13 +106,20 @@
   <profiles>
     <profile>
       <id>release</id>
+      
+      <properties>
+        <version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
+        <version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
+        <version.maven-source-plugin>3.0.1</version.maven-source-plugin>
+        <version.nexus-staging-maven-plugin>1.6.7</version.nexus-staging-maven-plugin>
+      </properties>
 
       <build>
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <version>${version.maven-gpg-plugin}</version>
             <configuration>
               <keyname>${gpg.keyname}</keyname>
               <passphraseServerId>${gpg.keyname}</passphraseServerId>
@@ -115,7 +137,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.0</version>
+            <version>${version.maven-source-plugin}</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
@@ -128,7 +150,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.3</version>
+            <version>${version.maven-javadoc-plugin}</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -141,7 +163,7 @@
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.7</version>
+            <version>${version.nexus-staging-maven-plugin}</version>
             <extensions>true</extensions>
             <configuration>
               <serverId>ossrh</serverId>
