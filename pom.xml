@@ -3,7 +3,7 @@
 
   <groupId>com.itemis</groupId>
   <artifactId>org-parent</artifactId>
-  <version>3-SNAPSHOT</version>
+  <version>3</version>
   <packaging>pom</packaging>
 
   <name>itemis Org Parent</name>
@@ -19,7 +19,7 @@
   <scm>
     <connection>scm:git:https://github.com/itemis/org-parent.git</connection>
     <url>https://github.com/itemis/org-parent</url>
-    <tag>HEAD</tag>
+    <tag>3</tag>
   </scm>
 
   <issueManagement>
