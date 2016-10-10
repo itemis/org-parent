@@ -3,7 +3,7 @@
 
   <groupId>com.itemis</groupId>
   <artifactId>org-parent</artifactId>
-  <version>4-SNAPSHOT</version>
+  <version>3-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>itemis Org Parent</name>
