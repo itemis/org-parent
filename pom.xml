@@ -11,12 +11,12 @@
 
 	<name>itemis Org Parent</name>
 	<description>The base parent for all open-source projects coming from itemis.</description>
-	<url>https://github.com/shillner/maven-cdi-plugin-utils</url>
+	<url>https://github.com/itemis/org-parent</url>
 	<inceptionYear>2016</inceptionYear>
 
 	<organization>
 		<name>itemis AG</name>
-		<url>https://itemis.com/</url>
+		<url>https://www.itemis.com/en</url>
 	</organization>
 
 	<scm>
@@ -31,22 +31,18 @@
 	</issueManagement>
 
 	<licenses>
-        <license>
-            <name>Eclipse Public License - v 2.0</name>
-            <url>https://www.eclipse.org/legal/epl-2.0</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
+		<license>
+			<name>Eclipse Public License - v 2.0</name>
+			<url>https://www.eclipse.org/legal/epl-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-		</repository>
 	</distributionManagement>
 
 	<developers>
@@ -59,47 +55,18 @@
 	</developers>
 
 	<properties>
-		<project.scm.id>github</project.scm.id>
-		<version.maven-release-plugin>2.5.3</version.maven-release-plugin>
-		<version.unleash-maven-plugin>2.1.2</version.unleash-maven-plugin>
-		<version.unleash-scm-provider-git>2.0.1</version.unleash-scm-provider-git>
+		<version.maven-release-plugin>3.0.0-M4</version.maven-release-plugin>
 	</properties>
 
 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
-					<groupId>com.itemis.maven.plugins</groupId>
-					<artifactId>unleash-maven-plugin</artifactId>
-					<version>${version.unleash-maven-plugin}</version>
-					<dependencies>
-						<dependency>
-							<groupId>com.itemis.maven.plugins</groupId>
-							<artifactId>unleash-scm-provider-git</artifactId>
-							<version>${version.unleash-scm-provider-git}</version>
-						</dependency>
-					</dependencies>
-				</plugin>
-				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
 					<version>${version.maven-release-plugin}</version>
 					<configuration>
 						<tagNameFormat>@{project.version}</tagNameFormat>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-install-plugin</artifactId>
-					<configuration>
-						<installAtEnd>true</installAtEnd>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<configuration>
-						<deployAtEnd>true</deployAtEnd>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -111,10 +78,10 @@
 			<id>release</id>
 
 			<properties>
-				<version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
-				<version.maven-javadoc-plugin>2.10.4</version.maven-javadoc-plugin>
-				<version.maven-source-plugin>3.0.1</version.maven-source-plugin>
-				<version.nexus-staging-maven-plugin>1.6.7</version.nexus-staging-maven-plugin>
+				<version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
+				<version.maven-javadoc-plugin>3.3.0</version.maven-javadoc-plugin>
+				<version.maven-source-plugin>3.2.0</version.maven-source-plugin>
+				<version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
 			</properties>
 
 			<build>
@@ -178,4 +145,5 @@
 			</build>
 		</profile>
 	</profiles>
+
 </project>
