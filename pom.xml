@@ -141,6 +141,8 @@
 				<version.maven-release-plugin>3.0.0-M4</version.maven-release-plugin>
 				<version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
 				<version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
+				<!-- Disable JavaDoc linter. It is way too strict and breaks the release without need be. -->
+				<doclint>none</doclint>
 			</properties>
 
 			<build>
