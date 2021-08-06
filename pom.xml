@@ -6,7 +6,7 @@
 
 	<groupId>com.itemis</groupId>
 	<artifactId>org-parent</artifactId>
-	<version>4.0.0</version>
+	<version>4.1.0</version>
 	<packaging>pom</packaging>
 
 	<name>itemis Org Parent</name>
@@ -41,7 +41,7 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -137,7 +137,7 @@
 						<extensions>true</extensions>
 						<configuration>
 							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
 							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 						</configuration>
 					</plugin>
