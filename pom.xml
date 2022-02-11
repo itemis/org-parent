@@ -1,205 +1,217 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.itemis</groupId>
-	<artifactId>org-parent</artifactId>
-	<version>5.5.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <groupId>com.itemis</groupId>
+    <artifactId>org-parent</artifactId>
+    <version>5.4.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-	<name>itemis AG org parent</name>
-	<description>The base parent for all open-source projects coming from itemis.</description>
-	<url>https://github.com/itemis/org-parent</url>
-	<inceptionYear>2016</inceptionYear>
+    <name>itemis AG org parent</name>
+    <description>The base parent for all open-source projects coming from itemis.</description>
+    <url>https://github.com/itemis/org-parent</url>
+    <inceptionYear>2016</inceptionYear>
 
-	<organization>
-		<name>itemis AG</name>
-		<url>https://www.itemis.com/en</url>
-	</organization>
+    <organization>
+        <name>itemis AG</name>
+        <url>https://www.itemis.com/en</url>
+    </organization>
 
-	<scm>
-		<connection>scm:git:https://github.com/itemis/org-parent.git</connection>
-		<url>https://github.com/itemis/org-parent</url>
-		<tag>HEAD</tag>
-	</scm>
+    <scm>
+        <connection>scm:git:https://github.com/itemis/org-parent.git</connection>
+        <url>https://github.com/itemis/org-parent</url>
+        <tag>HEAD</tag>
+    </scm>
 
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/itemis/org-parent/issues</url>
-	</issueManagement>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/itemis/org-parent/issues</url>
+    </issueManagement>
 
-	<licenses>
-		<license>
-			<name>Eclipse Public License - v 2.0</name>
-			<url>https://www.eclipse.org/legal/epl-2.0</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>Eclipse Public License - v 2.0</name>
+            <url>https://www.eclipse.org/legal/epl-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
-	<developers>
-		<developer>
-			<id>itemis</id>
-			<name>itemis AG</name>
-			<organization>itemis AG</organization>
-			<organizationUrl>https://itemis.com/en</organizationUrl>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <id>itemis</id>
+            <name>itemis AG</name>
+            <organization>itemis AG</organization>
+            <organizationUrl>https://itemis.com/en</organizationUrl>
+        </developer>
+    </developers>
 
-	<properties>
-		<version.maven-javadoc-plugin>3.3.1</version.maven-javadoc-plugin>
-		<version.maven-source-plugin>3.2.0</version.maven-source-plugin>
-		<version.maven-clean-plugin>3.1.0</version.maven-clean-plugin>
-		<version.maven-archetype-plugin>3.2.1</version.maven-archetype-plugin>
-		<version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
-		<version.maven-install-plugin>3.0.0-M1</version.maven-install-plugin>
-		<version.maven-help-plugin>3.2.0</version.maven-help-plugin>
-	</properties>
+    <properties>
+        <version.maven-javadoc-plugin>3.3.1</version.maven-javadoc-plugin>
+        <version.maven-source-plugin>3.2.0</version.maven-source-plugin>
+        <version.maven-clean-plugin>3.1.0</version.maven-clean-plugin>
+        <version.maven-archetype-plugin>3.2.1</version.maven-archetype-plugin>
+        <version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
+        <version.maven-install-plugin>3.0.0-M1</version.maven-install-plugin>
+        <version.maven-help-plugin>3.2.0</version.maven-help-plugin>
+    </properties>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>${version.maven-clean-plugin}</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-archetype-plugin</artifactId>
-					<version>${version.maven-archetype-plugin}</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>${version.maven-resources-plugin}</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>${version.maven-install-plugin}</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>${version.maven-source-plugin}</version>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<goals>
-								<goal>jar-no-fork</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>${version.maven-javadoc-plugin}</version>
-					<executions>
-						<execution>
-							<id>attach-javadocs</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<!-- Show active profiles to ease debugging -->
-				<plugin>
-					<artifactId>maven-help-plugin</artifactId>
-					<version>${version.maven-help-plugin}</version>
-					<executions>
-						<execution>
-							<id>show-profiles</id>
-							<phase>compile</phase>
-							<goals>
-								<goal>active-profiles</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		<plugins>
-			<plugin>
-				<artifactId>maven-help-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${version.maven-clean-plugin}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <version>${version.maven-archetype-plugin}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${version.maven-resources-plugin}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${version.maven-install-plugin}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${version.maven-source-plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${version.maven-javadoc-plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- Show active profiles to ease debugging -->
+                <plugin>
+                    <artifactId>maven-help-plugin</artifactId>
+                    <version>${version.maven-help-plugin}</version>
+                    <executions>
+                        <execution>
+                            <id>show-profiles</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>active-profiles</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-help-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-	<profiles>
-		<profile>
-			<id>release</id>
+    <profiles>
+        <profile>
+            <id>release</id>
 
-			<properties>
-				<version.maven-release-plugin>3.0.0-M5</version.maven-release-plugin>
-				<version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
-				<version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
-				<!-- Disable JavaDoc linter. It is way too strict and breaks the release without need be. -->
-				<doclint>none</doclint>
-			</properties>
+            <properties>
+                <version.maven-release-plugin>3.0.0-M5</version.maven-release-plugin>
+                <version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
+                <version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
+                <!-- Disable JavaDoc linter. It is way too strict and breaks 
+                    the release without need be. -->
+                <doclint>none</doclint>
+            </properties>
 
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<artifactId>maven-release-plugin</artifactId>
-							<version>${version.maven-release-plugin}</version>
-							<configuration>
-								<tagNameFormat>@{project.version}</tagNameFormat>
-							</configuration>
-						</plugin>
-						<plugin>
-							<artifactId>maven-gpg-plugin</artifactId>
-							<version>${version.maven-gpg-plugin}</version>
-							<configuration>
-								<keyname>${gpg.keyname}</keyname>
-								<passphraseServerId>${gpg.keyname}</passphraseServerId>
-							</configuration>
-							<executions>
-								<execution>
-									<id>sign-artifacts</id>
-									<phase>verify</phase>
-									<goals>
-										<goal>sign</goal>
-									</goals>
-								</execution>
-							</executions>
-						</plugin>
-						<plugin>
-							<groupId>org.sonatype.plugins</groupId>
-							<artifactId>nexus-staging-maven-plugin</artifactId>
-							<version>${version.nexus-staging-maven-plugin}</version>
-							<extensions>true</extensions>
-							<configuration>
-								<serverId>ossrh</serverId>
-								<nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
-								<autoReleaseAfterClose>true</autoReleaseAfterClose>
-							</configuration>
-						</plugin>
-					</plugins>
-				</pluginManagement>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-release-plugin</artifactId>
+                            <version>${version.maven-release-plugin}</version>
+                            <configuration>
+                                <tagNameFormat>@{project.version}</tagNameFormat>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <artifactId>maven-gpg-plugin</artifactId>
+                            <version>${version.maven-gpg-plugin}</version>
+                            <configuration>
+                                <keyname>${gpg.keyname}</keyname>
+                                <passphraseServerId>${gpg.keyname}</passphraseServerId>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>sign-artifacts</id>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>sign</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.sonatype.plugins</groupId>
+                            <artifactId>nexus-staging-maven-plugin</artifactId>
+                            <version>${version.nexus-staging-maven-plugin}</version>
+                            <extensions>true</extensions>
+                            <configuration>
+                                <serverId>ossrh</serverId>
+                                <nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
+                                <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            </configuration>
+                            <!-- nexus-staging-maven-plugin is incompatible 
+                                to JDK >=16 -->
+                            <!-- See https://issues.sonatype.org/browse/OSSRH-66257 -->
+                            <!-- See https://stackoverflow.com/a/70157413 -->
+                            <dependencies>
+                                <dependency>
+                                    <groupId>com.thoughtworks.xstream</groupId>
+                                    <artifactId>xstream</artifactId>
+                                    <version>1.4.15</version>
+                                </dependency>
+                            </dependencies>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
 
-				<plugins>
-					<plugin>
-						<artifactId>maven-gpg-plugin</artifactId>
-					</plugin>
-					<plugin>
-						<artifactId>maven-source-plugin</artifactId>
-					</plugin>
-					<plugin>
-						<artifactId>maven-javadoc-plugin</artifactId>
-					</plugin>
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
