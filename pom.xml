@@ -6,7 +6,7 @@
 
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
-    <version>5.5.0-SNAPSHOT</version>
+    <version>5.5.0</version>
     <packaging>pom</packaging>
 
     <name>itemis AG org parent</name>
@@ -55,9 +55,9 @@
     </developers>
 
     <properties>
-        <version.maven-javadoc-plugin>3.3.1</version.maven-javadoc-plugin>
+        <version.maven-javadoc-plugin>3.4.0</version.maven-javadoc-plugin>
         <version.maven-source-plugin>3.2.0</version.maven-source-plugin>
-        <version.maven-clean-plugin>3.1.0</version.maven-clean-plugin>
+        <version.maven-clean-plugin>3.2.0</version.maven-clean-plugin>
         <version.maven-archetype-plugin>3.2.1</version.maven-archetype-plugin>
         <version.maven-resources-plugin>3.2.0</version.maven-resources-plugin>
         <version.maven-install-plugin>3.0.0-M1</version.maven-install-plugin>
@@ -135,9 +135,9 @@
             <id>release</id>
 
             <properties>
-                <version.maven-release-plugin>3.0.0-M5</version.maven-release-plugin>
+                <version.maven-release-plugin>3.0.0-M6</version.maven-release-plugin>
                 <version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
-                <version.nexus-staging-maven-plugin>1.6.8</version.nexus-staging-maven-plugin>
+                <version.nexus-staging-maven-plugin>1.6.13</version.nexus-staging-maven-plugin>
                 <!-- Disable JavaDoc linter. It is way too strict and breaks 
                     the release without need be. -->
                 <doclint>none</doclint>
@@ -180,17 +180,6 @@
                                 <nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
                                 <autoReleaseAfterClose>true</autoReleaseAfterClose>
                             </configuration>
-                            <!-- nexus-staging-maven-plugin is incompatible 
-                                to JDK >=16 -->
-                            <!-- See https://issues.sonatype.org/browse/OSSRH-66257 -->
-                            <!-- See https://stackoverflow.com/a/70157413 -->
-                            <dependencies>
-                                <dependency>
-                                    <groupId>com.thoughtworks.xstream</groupId>
-                                    <artifactId>xstream</artifactId>
-                                    <version>1.4.15</version>
-                                </dependency>
-                            </dependencies>
                         </plugin>
                     </plugins>
                 </pluginManagement>
