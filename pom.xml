@@ -6,7 +6,7 @@
 
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
-    <version>5.5.1-SNAPSHOT</version>
+    <version>5.5.1T</version>
     <packaging>pom</packaging>
 
     <name>itemis AG org parent</name>
