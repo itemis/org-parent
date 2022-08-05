@@ -141,6 +141,7 @@
                 <!-- Disable JavaDoc linter. It is way too strict and breaks 
                     the release without need be. -->
                 <doclint>none</doclint>
+                <quiet>true</quiet>
             </properties>
 
             <build>
