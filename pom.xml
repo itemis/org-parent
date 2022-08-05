@@ -6,7 +6,7 @@
 
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
-    <version>5.5.1T</version>
+    <version>5.5.2</version>
     <packaging>pom</packaging>
 
     <name>itemis AG org parent</name>
@@ -141,6 +141,7 @@
                 <!-- Disable JavaDoc linter. It is way too strict and breaks 
                     the release without need be. -->
                 <doclint>none</doclint>
+                <quiet>true</quiet>
             </properties>
 
             <build>
