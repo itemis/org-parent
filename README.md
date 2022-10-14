@@ -1,1 +1,1 @@
-A base parent for open-source projects coming from itemis AG Lünen.
+A base parent for open-source projects coming from [itemis AG Lünen](https://itemis.com).
