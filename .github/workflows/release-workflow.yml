@@ -1,4 +1,4 @@
-name: org-parent-release-workflow
+name: release-workflow
 run-name: Release run ${{ github.run_number }}
 on: 
   workflow_dispatch:
@@ -14,10 +14,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-package: 'jre'
-          java-version: '17'
+          java-version: '11'
           check-latest: true
           cache: 'maven'
       - name: Build & Test
-        run: mvn --batch-mode -U clean package
+        run: mvn -B -U clean package
       - name: Deploy to GitHub
         run: echo "Deployment not setup yet."
