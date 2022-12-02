@@ -6,7 +6,7 @@
 
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
-    <version>5.6.1</version>
+    <version>5.7.0</version>
     <packaging>pom</packaging>
 
     <name>itemis AG org parent</name>
@@ -60,7 +60,7 @@
         <version.maven-clean-plugin>3.2.0</version.maven-clean-plugin>
         <version.maven-archetype-plugin>3.2.1</version.maven-archetype-plugin>
         <version.maven-resources-plugin>3.3.0</version.maven-resources-plugin>
-        <version.maven-install-plugin>3.0.1</version.maven-install-plugin>
+        <version.maven-install-plugin>3.1.0</version.maven-install-plugin>
         <version.maven-help-plugin>3.3.0</version.maven-help-plugin>
     </properties>
 
@@ -135,7 +135,7 @@
             <id>release</id>
 
             <properties>
-                <version.maven-release-plugin>3.0.0-M6</version.maven-release-plugin>
+                <version.maven-release-plugin>3.0.0-M7</version.maven-release-plugin>
                 <version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
                 <version.nexus-staging-maven-plugin>1.6.13</version.nexus-staging-maven-plugin>
                 <!-- Disable JavaDoc linter. It is way too strict and breaks 

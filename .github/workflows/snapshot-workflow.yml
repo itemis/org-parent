@@ -1,4 +1,4 @@
-name: org-parent-snapshot-workflow
+name: snapshot-workflow
 run-name: Build commit ${{ github.sha }} on branch ${{ github.ref }}
 on: 
   push:
@@ -20,8 +20,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-package: 'jre'
-          java-version: '17'
+          java-version: '11'
           check-latest: true
           cache: 'maven'
       - name: Run Maven
-        run: mvn --batch-mode -U clean package
+        run: mvn -B -U clean package
