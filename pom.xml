@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
     <version>5.7.0</version>
     <packaging>pom</packaging>
-
     <name>itemis AG org parent</name>
     <description>A base parent for open-source projects coming from itemis AG Lünen.</description>
     <url>https://github.com/itemis/org-parent</url>
     <inceptionYear>2016</inceptionYear>
-
     <organization>
         <name>itemis AG</name>
         <url>https://www.itemis.com/en</url>
     </organization>
-
     <scm>
         <connection>scm:git:https://github.com/itemis/org-parent.git</connection>
         <url>https://github.com/itemis/org-parent</url>
         <tag>HEAD</tag>
     </scm>
-
     <issueManagement>
         <system>GitHub</system>
         <url>https://github.com/itemis/org-parent/issues</url>
     </issueManagement>
-
     <licenses>
         <license>
             <name>Eclipse Public License - v 2.0</name>
@@ -37,14 +29,12 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
-
     <developers>
         <developer>
             <id>itemis</id>
@@ -53,7 +43,6 @@
             <organizationUrl>https://itemis.com/en</organizationUrl>
         </developer>
     </developers>
-
     <properties>
         <version.maven-javadoc-plugin>3.4.1</version.maven-javadoc-plugin>
         <version.maven-source-plugin>3.2.1</version.maven-source-plugin>
@@ -63,7 +52,6 @@
         <version.maven-install-plugin>3.1.0</version.maven-install-plugin>
         <version.maven-help-plugin>3.3.0</version.maven-help-plugin>
     </properties>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -129,11 +117,9 @@
             </plugin>
         </plugins>
     </build>
-
     <profiles>
         <profile>
             <id>release</id>
-
             <properties>
                 <version.maven-release-plugin>3.0.0-M7</version.maven-release-plugin>
                 <version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
@@ -143,7 +129,6 @@
                 <doclint>none</doclint>
                 <quiet>true</quiet>
             </properties>
-
             <build>
                 <pluginManagement>
                     <plugins>
@@ -154,13 +139,10 @@
                                 <tagNameFormat>@{project.version}</tagNameFormat>
                             </configuration>
                         </plugin>
+                        <!-- The keyname & passphrase are configured via GitHub's actions/setup-java action. -->
                         <plugin>
                             <artifactId>maven-gpg-plugin</artifactId>
                             <version>${version.maven-gpg-plugin}</version>
-                            <configuration>
-                                <keyname>${gpg.keyname}</keyname>
-                                <passphraseServerId>${gpg.keyname}</passphraseServerId>
-                            </configuration>
                             <executions>
                                 <execution>
                                     <id>sign-artifacts</id>
@@ -168,6 +150,12 @@
                                     <goals>
                                         <goal>sign</goal>
                                     </goals>
+                                    <configuration>
+                                        <gpgArguments>
+                                            <arg>--pinentry-mode</arg>
+                                            <arg>loopback</arg>
+                                        </gpgArguments>
+                                    </configuration>
                                 </execution>
                             </executions>
                         </plugin>
@@ -184,7 +172,6 @@
                         </plugin>
                     </plugins>
                 </pluginManagement>
-
                 <plugins>
                     <plugin>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -203,5 +190,4 @@
             </build>
         </profile>
     </profiles>
-
 </project>
