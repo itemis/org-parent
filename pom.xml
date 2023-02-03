@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
-    <version>5.7.0</version>
+    <version>5.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>itemis AG org parent</name>
     <description>A base parent for open-source projects coming from itemis AG Lünen.</description>
