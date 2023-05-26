@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
-    <version>5.7.1</version>
+    <version>5.8.0</version>
     <packaging>pom</packaging>
     <name>itemis AG org parent</name>
-    <description>A base parent for open-source projects coming from itemis AG Lünen.</description>
+    <description>A base parent for open-source projects coming from itemis AG
+        Lünen.</description>
     <url>https://github.com/itemis/org-parent</url>
     <inceptionYear>2016</inceptionYear>
     <organization>
@@ -51,6 +54,9 @@
         <version.maven-resources-plugin>3.3.1</version.maven-resources-plugin>
         <version.maven-install-plugin>3.1.1</version.maven-install-plugin>
         <version.maven-help-plugin>3.4.0</version.maven-help-plugin>
+        <version.maven-release-plugin>3.0.0</version.maven-release-plugin>
+        <version.maven-gpg-plugin>3.1.0</version.maven-gpg-plugin>
+        <version.nexus-staging-maven-plugin>1.6.13</version.nexus-staging-maven-plugin>
     </properties>
     <build>
         <pluginManagement>
@@ -71,30 +77,6 @@
                     <artifactId>maven-install-plugin</artifactId>
                     <version>${version.maven-install-plugin}</version>
                 </plugin>
-                <plugin>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${version.maven-source-plugin}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${version.maven-javadoc-plugin}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
                 <!-- Show active profiles to ease debugging -->
                 <plugin>
                     <artifactId>maven-help-plugin</artifactId>
@@ -109,6 +91,27 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${version.maven-release-plugin}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${version.maven-gpg-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${version.nexus-staging-maven-plugin}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${version.maven-source-plugin}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${version.maven-javadoc-plugin}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -121,11 +124,8 @@
         <profile>
             <id>release</id>
             <properties>
-                <version.maven-release-plugin>3.0.0</version.maven-release-plugin>
-                <version.maven-gpg-plugin>3.1.0</version.maven-gpg-plugin>
-                <version.nexus-staging-maven-plugin>1.6.13</version.nexus-staging-maven-plugin>
-                <!-- Disable JavaDoc linter. It is way too strict and breaks 
-                    the release without need be. -->
+                <!-- Disable JavaDoc linter. It is way too strict and breaks the
+                release without need be. -->
                 <doclint>none</doclint>
                 <quiet>true</quiet>
             </properties>
@@ -134,15 +134,14 @@
                     <plugins>
                         <plugin>
                             <artifactId>maven-release-plugin</artifactId>
-                            <version>${version.maven-release-plugin}</version>
                             <configuration>
                                 <tagNameFormat>@{project.version}</tagNameFormat>
                             </configuration>
                         </plugin>
-                        <!-- The keyname & passphrase are configured via GitHub's actions/setup-java action. -->
+                        <!-- The keyname & passphrase are configured via
+                        GitHub's actions/setup-java action. -->
                         <plugin>
                             <artifactId>maven-gpg-plugin</artifactId>
-                            <version>${version.maven-gpg-plugin}</version>
                             <executions>
                                 <execution>
                                     <id>sign-artifacts</id>
@@ -162,13 +161,34 @@
                         <plugin>
                             <groupId>org.sonatype.plugins</groupId>
                             <artifactId>nexus-staging-maven-plugin</artifactId>
-                            <version>${version.nexus-staging-maven-plugin}</version>
                             <extensions>true</extensions>
                             <configuration>
                                 <serverId>ossrh</serverId>
                                 <nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
                                 <autoReleaseAfterClose>true</autoReleaseAfterClose>
                             </configuration>
+                        </plugin>
+                        <plugin>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>attach-sources</id>
+                                    <goals>
+                                        <goal>jar-no-fork</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <plugin>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadocs</id>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
                         </plugin>
                     </plugins>
                 </pluginManagement>
