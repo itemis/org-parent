@@ -138,8 +138,6 @@
                                 <tagNameFormat>@{project.version}</tagNameFormat>
                             </configuration>
                         </plugin>
-                        <!-- The keyname & passphrase are configured via
-                        GitHub's actions/setup-java action. -->
                         <plugin>
                             <artifactId>maven-gpg-plugin</artifactId>
                             <executions>
@@ -150,10 +148,9 @@
                                         <goal>sign</goal>
                                     </goals>
                                     <configuration>
-                                        <gpgArguments>
-                                            <arg>--pinentry-mode</arg>
-                                            <arg>loopback</arg>
-                                        </gpgArguments>
+                                        <signer>bc</signer>
+                                        <keyEnvName>SIGN_KEY</keyEnvName>
+                                        <passphraseEnvName>SIGN_KEY_PASS</passphraseEnvName>
                                     </configuration>
                                 </execution>
                             </executions>
