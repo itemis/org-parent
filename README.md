@@ -1,1 +1,1 @@
-A basic maven parent for open-source projects created at [itemis AG Lünen](https://www.itemis.com).
+A basic maven parent for open-source projects created at [itemis AG Dortmund](https://www.itemis.com).
