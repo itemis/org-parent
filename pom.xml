@@ -56,7 +56,7 @@
         <version.maven-help-plugin>3.5.1</version.maven-help-plugin>
         <version.maven-release-plugin>3.1.1</version.maven-release-plugin>
         <version.maven-gpg-plugin>3.2.8</version.maven-gpg-plugin>
-        <version.nexus-staging-maven-plugin>1.7.0</version.nexus-staging-maven-plugin>
+        <version.central-publishing-maven-plugin>0.8.0</version.central-publishing-maven-plugin>
     </properties>
     <build>
         <pluginManagement>
@@ -100,9 +100,9 @@
                     <version>${version.maven-gpg-plugin}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>${version.nexus-staging-maven-plugin}</version>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${version.central-publishing-maven-plugin}</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-source-plugin</artifactId>
@@ -156,13 +156,13 @@
                             </executions>
                         </plugin>
                         <plugin>
-                            <groupId>org.sonatype.plugins</groupId>
-                            <artifactId>nexus-staging-maven-plugin</artifactId>
+                            <groupId>org.sonatype.central</groupId>
+                            <artifactId>central-publishing-maven-plugin</artifactId>
                             <extensions>true</extensions>
                             <configuration>
-                                <serverId>ossrh</serverId>
-                                <nexusUrl>https://s01.oss.sonatype.org</nexusUrl>
-                                <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                                <publishingServerId>central</publishingServerId>
+                                <autoPublish>true</autoPublish>
+                                <waitUntil>published</waitUntil>
                             </configuration>
                         </plugin>
                         <plugin>
