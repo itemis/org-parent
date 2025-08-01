@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.itemis</groupId>
     <artifactId>org-parent</artifactId>
-    <version>5.8.10</version>
+    <version>5.8.11</version>
     <packaging>pom</packaging>
     <name>itemis AG org parent</name>
     <description>A base parent for open-source projects coming from itemis AG
-        Lünen.</description>
+        Dortmund.</description>
     <url>https://github.com/itemis/org-parent</url>
     <inceptionYear>2016</inceptionYear>
     <organization>
@@ -55,7 +55,7 @@
         <version.maven-install-plugin>3.1.4</version.maven-install-plugin>
         <version.maven-help-plugin>3.5.1</version.maven-help-plugin>
         <version.maven-release-plugin>3.1.1</version.maven-release-plugin>
-        <version.maven-gpg-plugin>3.2.7</version.maven-gpg-plugin>
+        <version.maven-gpg-plugin>3.2.8</version.maven-gpg-plugin>
         <version.nexus-staging-maven-plugin>1.7.0</version.nexus-staging-maven-plugin>
     </properties>
     <build>
